@@ -39,6 +39,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
               text: text,
               onClickedCopy: copyToClipboard,
             ),
+            // Icon Button below for Saving and redirecting
             IconButton(
               icon: Icon(Icons.save_outlined),
               tooltip: 'Save File',
