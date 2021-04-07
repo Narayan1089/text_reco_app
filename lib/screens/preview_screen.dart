@@ -35,6 +35,9 @@ class PreviewScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 5),
+// The main issue here is to call the dynamic Listview Builder to update itself,
+// but for that you have to use List or Map to store the user data and pass it down here
+
           Expanded(
             child: ListView(children: [
               PreviewItem(
