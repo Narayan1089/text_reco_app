@@ -17,7 +17,7 @@ class DrawerWidgets extends StatelessWidget {
               children: [
                 CircleAvatar(
                   backgroundColor: Colors.deepPurple,
-                  // backgroundImage: AssetImage('images/Tushar.png'),
+                  backgroundImage: AssetImage('images/Tushar.png'),
                   radius: 50,
                 ),
                 SizedBox(height: 10),

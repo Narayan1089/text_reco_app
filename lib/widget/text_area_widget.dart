@@ -16,7 +16,7 @@ class TextAreaWidget extends StatelessWidget {
           Expanded(
             child: Container(
               height: 200,
-              decoration: BoxDecoration(border: Border.all(width: 3)),
+              decoration: BoxDecoration(border: Border.all()),
               padding: EdgeInsets.all(8),
               alignment: Alignment.center,
               child: SelectableText(

@@ -1,10 +1,9 @@
 import 'dart:io';
 
-import 'package:firebase_ml_text_recognition/screens/details.dart';
 import 'package:flutter/material.dart';
 
 class PreviewItem extends StatelessWidget {
-  final String id;
+  final int id;
   final String text;
   final File image;
 
@@ -59,49 +58,39 @@ class PreviewItem extends StatelessWidget {
         );
       },
       onDismissed: (direction) {},
-      child: GestureDetector(
-          child: Card(
-            margin: EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 4,
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(8),
-              child: ListTile(
-                leading: CircleAvatar(
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                    child: FittedBox(
-                      child: image != null
-                          ? Image.file(image)
-                          : Icon(Icons.photo, size: 80, color: Colors.black),
-                    ),
-                  ),
+      child: Card(
+        margin: EdgeInsets.symmetric(
+          horizontal: 15,
+          vertical: 4,
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(8),
+          child: ListTile(
+            leading: CircleAvatar(
+              child: Padding(
+                padding: EdgeInsets.all(5),
+                child: FittedBox(
+                  child: image != null
+                      ? Image.file(image)
+                      : Icon(Icons.photo, size: 80, color: Colors.black),
                 ),
-                title:
-                    // image != null
-                    //     ? Text(
-                    //         text,
-                    //         maxLines: 4,
-                    //         style: TextStyle(fontSize: 5),
-                    //       )
-                    //     :
-                    Text(
-                  'Decription',
-                  style: TextStyle(fontSize: 20),
-                ),
-
-                // subtitle: Text('Total: \$${(price * quantity)}'),
-                // trailing: Text('$quantity x'),
               ),
             ),
+            title: image != null
+                ? Text(
+                    text,
+                    maxLines: 4,
+                    style: TextStyle(fontSize: 5),
+                  )
+                : Text(
+                    'No contents added yet !',
+                    style: TextStyle(fontSize: 20),
+                  ),
+            // subtitle: Text('Total: \$${(price * quantity)}'),
+            // trailing: Text('$quantity x'),
           ),
-          onDoubleTap: () {
-            Navigator.of(context).pushNamed(
-              Details.idScreen,
-              arguments: id,
-            );
-          }),
+        ),
+      ),
     );
   }
 }

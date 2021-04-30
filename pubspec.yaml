@@ -7,7 +7,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    
 
   cupertino_icons: ^1.0.0
 
@@ -16,16 +15,6 @@ dependencies:
 
   image_picker: ^0.6.7+11
   clipboard: ^0.1.2+8
-  provider: ^4.3.3
-  random_string: 
-  cloud_firestore:
-  firebase_core:
-  firebase_auth: ^0.15.2
-  google_sign_in: ^4.1.1
-  shared_preferences: ^0.5.6+3
-  firebase_auth_web:
-  firebase_core_web:
-  cloud_firestore_web:
 
 dev_dependencies:
   flutter_test:
