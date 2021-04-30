@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "687764279773",
-    "firebase_url": "https://fir-ml-641e1.firebaseio.com",
-    "project_id": "fir-ml-641e1",
-    "storage_bucket": "fir-ml-641e1.appspot.com"
+    "project_number": "1029101857935",
+    "firebase_url": "https://lastml-default-rtdb.firebaseio.com",
+    "project_id": "lastml",
+    "storage_bucket": "lastml.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:687764279773:android:fd2bb416dbb6d286be6634",
+        "mobilesdk_app_id": "1:1029101857935:android:22132bbc95d4c3d9dd54fa",
         "android_client_info": {
-          "package_name": "com.example.firebase_ml_text_recognition"
+          "package_name": "com.example.firebasemltextrecognition"
         }
       },
       "oauth_client": [
         {
-          "client_id": "687764279773-jro53n6ebsuo25ajpgi83sc83i4u4eeu.apps.googleusercontent.com",
+          "client_id": "1029101857935-nted9nr2qjktigpemf00s0skaf7f8288.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD164JZlTEAIHQJ_V2rx9KQwoMtFT7pwQE"
+          "current_key": "AIzaSyClvLipsWDVvZuN9dSAPz0lvvjG_sidgss"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "687764279773-jro53n6ebsuo25ajpgi83sc83i4u4eeu.apps.googleusercontent.com",
+              "client_id": "1029101857935-nted9nr2qjktigpemf00s0skaf7f8288.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

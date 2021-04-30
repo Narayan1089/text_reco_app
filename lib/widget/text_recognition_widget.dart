@@ -2,10 +2,14 @@ import 'dart:io';
 
 import 'package:clipboard/clipboard.dart';
 import 'package:firebase_ml_text_recognition/api/firebase_ml_api.dart';
-import 'package:firebase_ml_text_recognition/screens/preview_screen.dart';
+
+import 'package:firebase_ml_text_recognition/providers/docs.dart';
+
 import 'package:firebase_ml_text_recognition/widget/text_area_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
+import 'package:random_string/random_string.dart';
 
 import 'controls_widget.dart';
 
@@ -21,47 +25,48 @@ class TextRecognitionWidget extends StatefulWidget {
 class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
   String text = '';
   File image;
-  int id = 0;
+  String id = randomString(10);
+  // var _editDocument = Document(id: null, text: '', image: null);
+
+  // var _intializeValues = {
+  //   'text': '',
+  //   'image': null,
+  // };
+  void _saveItem() {
+    Provider.of<DocsProvider>(context, listen: false).addItems(id, text, image);
+    Navigator.of(context).pop();
+  }
 
   @override
-  Widget build(BuildContext context) => Expanded(
-        child: Column(
-          children: [
-            Expanded(child: buildImage()),
-            const SizedBox(height: 8),
-            ControlsWidget(
-              onClickedPickImage: pickImage,
-              onClickedScanText: scanText,
-              onClickedClear: clear,
-            ),
-            const SizedBox(height: 8),
-            TextAreaWidget(
-              text: text,
-              onClickedCopy: copyToClipboard,
-            ),
-            // Icon Button below for Saving and redirecting
-            IconButton(
-              icon: Icon(Icons.save_outlined),
-              tooltip: 'Save File',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => PreviewScreen(
-                      id: id,
-                      text: text,
-                      image: image,
-                    ),
-                  ),
-                );
-                setState(() {
-                  id++;
-                });
-              },
-            ),
-          ],
-        ),
-      );
+  Widget build(BuildContext context) {
+    // final String text2 = text;
+    // final int id2 = id;
+    // final File image2 = image;
+    return Expanded(
+      child: Column(
+        children: [
+          Expanded(child: buildImage()),
+          const SizedBox(height: 8),
+          ControlsWidget(
+            onClickedPickImage: pickImage,
+            onClickedScanText: scanText,
+            onClickedClear: clear,
+          ),
+          const SizedBox(height: 8),
+          TextAreaWidget(
+            text: text,
+            onClickedCopy: copyToClipboard,
+          ),
+          // Icon Button below for Saving and redirecting
+          IconButton(
+            icon: Icon(Icons.save_outlined),
+            tooltip: 'Save File',
+            onPressed: _saveItem,
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget buildImage() => Container(
         child: image != null
