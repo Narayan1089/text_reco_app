@@ -18,17 +18,32 @@ class ControlsWidget extends StatelessWidget {
         children: [
           RaisedButton(
             onPressed: onClickedPickImage,
-            child: Text('Pick Image'),
+            color: Colors.orange,
+            child: Text(
+              'Choose Image',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
           ),
-          const SizedBox(width: 12),
+          const SizedBox(width: 6),
           RaisedButton(
             onPressed: onClickedScanText,
-            child: Text('Scan For Text'),
+            color: Colors.green,
+            child: Text(
+              'Scan For Text',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            focusElevation: 60,
           ),
-          const SizedBox(width: 12),
+          const SizedBox(width: 6),
           RaisedButton(
             onPressed: onClickedClear,
-            child: Text('Clear'),
+            color: Colors.red,
+            child: Text(
+              'Clear',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            focusElevation: 60,
+            hoverColor: Colors.amber,
           )
         ],
       );
